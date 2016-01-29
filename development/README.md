@@ -39,7 +39,7 @@
 
 * Generate necessary [Bundler binstubs] for the project, such as `rake` and
   `rspec`, and add them to version control.
-
+* use inline callbacks `after_create { SomeJob.perform_later(user_id) } `
 
 [Bundler binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
 
@@ -59,6 +59,21 @@
 
 [fkey]: http://robots.thoughtbot.com/referential-integrity-with-foreign-keys
 
+### Query
+
+* use pluck and distinct for uniq single attribute `Location.order(:country).distinct.pluck(:country)`
+* use class methods over scopes
+```ruby
+  def self.featured
+    where(featured_athlete: true)
+  end
+```
+### Routes
+
+* limit resources with only `resources :guides, only: [:index, :show]`
+
+
+
 ## Ruby
 
 * TODO 1
@@ -68,7 +83,7 @@
 ## RSpec
 
 * Write request specs for api's [request-spec](https://www.relishapp.com/rspec/rspec-rails/docs/request-specs/request-spec)
-* TODO 2
+* Stub Env with `allow(Rails).to receive(:env).and_return(ActiveSupport::StringInquirer.new("production"))`
 
 ## Postgres
 
