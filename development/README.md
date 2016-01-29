@@ -43,13 +43,7 @@
 * use `model.invalid?` instead of `!model.valid?`
 * use `users.many?` instead of `users.size > 1` use 
 * use `User.find_each(batch_size: 100)` instead of `User.all.each`
-* Avoid `member` and `collection` routes.
-
 * Use private instead of protected when defining controller methods.
-* Name date columns with `_on` suffixes.
-* Name datetime columns with `_at` suffixes.
-* Name time columns (referring to a time of day with no date) with `_time`
-  suffixes.
 * Name initializers for their gem name.
 * Order ActiveRecord associations alphabetically by association type, then
   attribute name. 
@@ -74,9 +68,6 @@ end
 * Use the default `render 'partial'` syntax over `render partial: 'partial'`.
 * Use `link_to` for GET requests, and `button_to` for other HTTP verbs.
 
-
-[`app/views/application`]: http://asciicasts.com/episodes/269-template-inheritance
-
 [Bundler binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
 ### validations
 * write validators app/validators/safe_for_work_validator.rb
@@ -88,7 +79,25 @@ end
 ### Migrations
 * [Add foreign key constraints][fkey] in migrations.
 * use ` t.references :employee ` for setting an index
+```ruby
+class AssociatePostsWithUsers < ActiveRecord::Migration
+  def change
+    add_column :posts,
+               :user_id,
+               null: false,
+               index: true
+
+    # This part is new:
+    add_foreign_key :posts,
+                    :users
+  end
+end
+```
 * check if all necessary indices are set
+* Name date columns with `_on` suffixes.
+* Name datetime columns with `_at` suffixes.
+* Name time columns (referring to a time of day with no date) with `_time`
+  suffixes.
 * Set an empty string as the default constraint for non-required string and text fields 
 ```ruby
   create_table :users  do |t|
@@ -122,7 +131,7 @@ end
 * TODO  
 
 ### Routes
-
+* Avoid `member` and `collection` routes.
 * limit resources with only `resources :guides, only: [:index, :show]`
 
 
