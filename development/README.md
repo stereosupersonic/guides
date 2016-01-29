@@ -49,7 +49,16 @@
   suffixes.
 * Name initializers for their gem name.
 * Order ActiveRecord associations alphabetically by association type, then
-  attribute name. [Example][order-associations].
+  attribute name. 
+```ruby
+class SomeClass
+  belongs_to :tree, class_name: Plant
+  has_many :apples
+  has_many :watermelons
+
+  validates :name, presence: true, uniqueness: true
+end
+```
 * Order ActiveRecord validations alphabetically by attribute name.
 * Order ActiveRecord associations above ActiveRecord validations.
 * Order controller contents: filters, public methods, private methods.
