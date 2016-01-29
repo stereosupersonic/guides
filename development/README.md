@@ -1,5 +1,6 @@
 # Development
 
+* [thoughtbot Best Practices](https://github.com/thoughtbot/guides/blob/master/best-practices/README.md)
 
 ## General
 
@@ -21,7 +22,11 @@
 
 
 [Keep the code simple]: http://www.readability.com/~/ko2aqda2
+## Design
 
+### API
+* [http-api-design](https://github.com/interagent/http-api-design)
+* 
 ## Codereview
 
 * TODO
@@ -40,6 +45,7 @@
 * don't change a ActiveJob interface
 
 ### Migrations
+* [Add foreign key constraints][fkey] in migrations.
 * check if all indices are
 * Set an empty string as the default constraint for non-required string and text fields 
 ```ruby
@@ -48,7 +54,21 @@
      t.string :name, null: false, default: ''
   end
 ```
+
+[fkey]: http://robots.thoughtbot.com/referential-integrity-with-foreign-keys
+
 ## Ruby
+
+* TODO 1
+* TODO 2
+
+
+## RSpec
+
+* Write request specs for api's [request-spec](https://www.relishapp.com/rspec/rspec-rails/docs/request-specs/request-spec)
+* TODO 2
+
+## Postgres
 
 * TODO 1
 * TODO 2
