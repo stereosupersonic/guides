@@ -77,7 +77,9 @@ end
 * don't change a ActiveJob interface
 
 ### Migrations
+#### foreign key
 * [Add foreign key constraints][fkey] in migrations.
+* * bin/rails generate migration CreateActions project:references
 * use ` t.references :employee ` for setting an index
 ```ruby
 class AssociatePostsWithUsers < ActiveRecord::Migration
@@ -91,6 +93,7 @@ class AssociatePostsWithUsers < ActiveRecord::Migration
   end
 end
 ```
+#### global
 * check if all necessary indices are set
 * Name date columns with `_on` suffixes.
 * Name datetime columns with `_at` suffixes.
