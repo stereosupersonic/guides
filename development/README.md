@@ -74,3 +74,7 @@
 
 * TODO 1
 * TODO 2
+
+## Writing 
+
+* Use [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
