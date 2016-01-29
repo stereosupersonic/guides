@@ -11,7 +11,7 @@
 * Prefer small methods. Between one and five lines is best.
 * Prefer small classes with a single, well-defined responsibility. When a class exceeds 100 lines, it may be doing too many things.
 * [Tell, don't ask](http://robots.thoughtbot.com/post/27572137956/tell-dont-ask)
-* 
+* TODO
 
 ### [Sandi's Rules](https://robots.thoughtbot.com/sandi-metz-rules-for-developers)
 
@@ -50,7 +50,7 @@
 ### Migrations
 * [Add foreign key constraints][fkey] in migrations.
 * use ` t.references :employee ` for setting an index
-* check if all indices are
+* check if all necessary indices are set
 * Set an empty string as the default constraint for non-required string and text fields 
 ```ruby
   create_table :users  do |t|
@@ -93,12 +93,12 @@ end
 * TODO 1
 * TODO 2
 
-
 ## RSpec
 
 * Write request specs for api's [request-spec](https://www.relishapp.com/rspec/rspec-rails/docs/request-specs/request-spec)
 * Stub Env with `allow(Rails).to receive(:env).and_return(ActiveSupport::StringInquirer.new("production"))`
 * use have_enqueued_job matcher for ActiveJob [have_enqueued_job](http://www.relishapp.com/rspec/rspec-rails/v/3-4/docs/matchers/have-enqueued-job-matcher)
+* TODO 2
 
 ## Postgres
 
