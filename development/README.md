@@ -19,7 +19,13 @@
 
 ### Migrations
 * check if all indices are
-
+* Set an empty string as the default constraint for non-required string and text fields 
+```ruby
+  create_table :users  do |t|
+    ...
+     t.string :name, null: false, default: ''
+  end
+```
 ## Ruby
 
 * TODO 1
