@@ -40,7 +40,8 @@
 * Generate necessary [Bundler binstubs] for the project, such as `rake` and
   `rspec`, and add them to version control.
 * use inline callbacks `after_create { SomeJob.perform_later(user_id) } `
-
+* use model.invalid? over !model.valid?
+* 
 [Bundler binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
 
 ### Background Jobs
@@ -48,6 +49,7 @@
 
 ### Migrations
 * [Add foreign key constraints][fkey] in migrations.
+* use ` t.references :employee ` for setting an index
 * check if all indices are
 * Set an empty string as the default constraint for non-required string and text fields 
 ```ruby
