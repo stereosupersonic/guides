@@ -6,6 +6,8 @@ General
 
 * [Keep the code simple].
 
+[Keep the code simple]: http://www.readability.com/~/ko2aqda2
+
 Codereview
 -------
 
