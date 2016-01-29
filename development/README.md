@@ -116,6 +116,27 @@ def change
   ...
 end
 ```
+* use sql
+```ruby
+ def up
+    connection.update(<<-SQL)
+      UPDATE users SET admin = 'f'
+    SQL
+  end
+```
+* add uniq index for uniq validator [Blog Post](https://robots.thoughtbot.com/the-perils-of-uniqueness-validations)
+```ruby
+class CreateUsers < ActiveRecord::Migration
+  create_table :users do |t|
+    t.string :email
+
+    t.timestamps null: false
+  end
+
+  add_index :users, :email, unique: true
+end
+```
+
 
 [fkey]: http://robots.thoughtbot.com/referential-integrity-with-foreign-keys
 
