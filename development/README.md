@@ -86,8 +86,6 @@ class AssociatePostsWithUsers < ActiveRecord::Migration
                :user_id,
                null: false,
                index: true
-
-    # This part is new:
     add_foreign_key :posts,
                     :users
   end
