@@ -26,7 +26,7 @@
 
 ### API
 
-* [http-api-design](https://github.com/interagent/http-api-design)
+* [http-api-design](https://geemus.gitbooks.io/http-api-design/content/)
 * TODO
 
 ## Codereview
