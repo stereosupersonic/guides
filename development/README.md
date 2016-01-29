@@ -56,6 +56,16 @@
      t.string :name, null: false, default: ''
   end
 ```
+* use timeouts for long running Postgres migrations
+```ruby
+def change
+  reversible do |direction|
+    direction.up   { execute("SET SESSION statement_timeout = 0;") }
+    direction.down { execute("SET SESSION statement_timeout = 0;") }
+  end
+  ...
+end
+```
 
 [fkey]: http://robots.thoughtbot.com/referential-integrity-with-foreign-keys
 
@@ -68,10 +78,12 @@
     where(featured_athlete: true)
   end
 ```
+*  for pessimistic locking use  [with_lock](https://github.com/rails/rails/blob/a913af96e0e46ca6637bca8f56282608628991eb/activerecord/lib/active_record/locking/pessimistic.rb#L61-L74)
+* TODO  
+
 ### Routes
 
 * limit resources with only `resources :guides, only: [:index, :show]`
-
 
 
 ## Ruby
@@ -84,6 +96,7 @@
 
 * Write request specs for api's [request-spec](https://www.relishapp.com/rspec/rspec-rails/docs/request-specs/request-spec)
 * Stub Env with `allow(Rails).to receive(:env).and_return(ActiveSupport::StringInquirer.new("production"))`
+* use have_enqueued_job matcher for ActiveJob [have_enqueued_job](http://www.relishapp.com/rspec/rspec-rails/v/3-4/docs/matchers/have-enqueued-job-matcher)
 
 ## Postgres
 
