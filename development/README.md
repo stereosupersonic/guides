@@ -164,6 +164,7 @@ end
 
 ## RSpec
 
+* use instance_double for stubs [doc](https://www.relishapp.com/rspec/rspec-mocks/v/3-0/docs/verifying-doubles/using-an-instance-double) 
 * Write request specs for api's [request-spec](https://www.relishapp.com/rspec/rspec-rails/docs/request-specs/request-spec)
 * Stub Env with `allow(Rails).to receive(:env).and_return(ActiveSupport::StringInquirer.new("production"))`
 * use have_enqueued_job matcher for ActiveJob [have_enqueued_job](http://www.relishapp.com/rspec/rspec-rails/v/3-4/docs/matchers/have-enqueued-job-matcher)
