@@ -39,7 +39,8 @@
 
 * Generate necessary [Bundler binstubs] for the project, such as `rake` and
   `rspec`, and add them to version control.
-* use inline callbacks `after_create { SomeJob.perform_later(user_id) } `
+* use inline callbacks `after_create { SomeJob.perform_later(user_id) } ` but better not use callbacks
+* use `.none?` over `.blank?` it's straightforward
 * use `model.invalid?` instead of `!model.valid?`
 * use `users.many?` instead of `users.size > 1` use 
 * use `User.find_each(batch_size: 100)` instead of `User.all.each`
