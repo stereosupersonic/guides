@@ -4,7 +4,7 @@
 
 ## General
 
-* [Keep the code simple].
+* Keep the code simple.
 * Limit collaborators of an object (entities an object depends on).
 * Limit an object's dependencies (entities that depend on an object).
 * Prefer composition over inheritance.
