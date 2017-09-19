@@ -78,6 +78,11 @@ end
 * don't change a ActiveJob interface
 
 ### Migrations
+
+#### don't change data in a migration!
+- it's not future proof 
+- create a script for manipulate the data under lib/scripts
+
 #### foreign key
 * [Add foreign key constraints][fkey] in migrations.
 * * bin/rails generate migration CreateActions project:references
